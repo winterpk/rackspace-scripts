@@ -45,4 +45,5 @@ curl "$ENDPOINT/loadbalancers/$LB_ID/ssltermination" \
         -H "X-Project-Id: $TENANT_ID" \
 	-H "Content-type: application/json" \
 	-X PUT \
-	-d "{\"sslTermination\":{\"certificate\":\"$CERT\",\"enabled\":true,\"secureTrafficOnly\":true,\"privatekey\":\"$PK\",\"intermediateCertificate\":\"$INTERMEDIATE\",\"securePort\":443}}" \
+  -s
+	-d "{\"sslTermination\":{\"certificate\":\"$CERT\",\"enabled\":true,\"secureTrafficOnly\":true,\"privatekey\":\"$PK\",\"intermediateCertificate\":\"$INTERMEDIATE\",\"securePort\":443}}" \ > /dev/null

@@ -14,9 +14,9 @@ This script is used to automate the installation of certificates on a Rackspace 
     - CERT
     - INTERMEDIATE
     - PK
-- Upload to your rackspace server `/root/scripts/`
-- Run the script `/root/scripts/rackspace-lb-auto-cert.sh`
+- Upload to your rackspace server (eg. `/etc/letsencrypt/renewal-hooks/deploy/rackspace-lb-auto-cert.sh`)
+- Make executable `/etc/letsencrypt/renewal-hooks/deploy/rackspace-lb-auto-cert.sh`
 
 ## Notes
 
-The main purpose of this script was to automate the installation of [https://certbot.eff.org/](certobot) / letsencrypt certificates on a Rackspace load balancer. The idea is to run this script based on the output of `certbot renew`. If the renew command did renew a script then this will install it on the load balancer.
+The main purpose of this script was to automate the installation of [https://certbot.eff.org/](certobot) / letsencrypt certificates on a Rackspace load balancer. Place this script in the `/etc/letsencrypt/renewal-hooks/deploy/` hook folder with executable permissions and it will install the cert automatically on the Rackspace load balancer.
