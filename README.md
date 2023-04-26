@@ -15,7 +15,7 @@ This script is used to automate the installation of certificates on a Rackspace 
     - INTERMEDIATE
     - PK
 - Upload to your rackspace server (eg. `/etc/letsencrypt/renewal-hooks/deploy/rackspace-lb-auto-cert.sh`)
-- Make executable `/etc/letsencrypt/renewal-hooks/deploy/rackspace-lb-auto-cert.sh`
+- Make executable `sudo chmod u+x /etc/letsencrypt/renewal-hooks/deploy/rackspace-lb-auto-cert.sh`
 
 ## Notes
 
