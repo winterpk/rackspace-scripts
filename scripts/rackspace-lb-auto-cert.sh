@@ -22,9 +22,9 @@ INTERMEDIATE=''
 PK=''
 
 AUTH=$(curl -s https://identity.api.rackspacecloud.com/v2.0/tokens  \
-	-X POST \
-	-d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"$USERNAME\",\"apiKey\":\"$API_KEY\"}}}" \
-	-H "Content-type: application/json")
+    -X POST \
+    -d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"$USERNAME\",\"apiKey\":\"$API_KEY\"}}}" \
+    -H "Content-type: application/json")
 
 TOKEN=$(echo "$AUTH" | grep -oP "(?<=APIKEY\"\],\"id\":\").*(?=\",\"tenant\")")
 
@@ -43,7 +43,7 @@ PK=$(echo "${PK//$'\n'/\\n}")'\n'
 curl "$ENDPOINT/loadbalancers/$LB_ID/ssltermination" \
         -H "X-Auth-Token: $TOKEN"  \
         -H "X-Project-Id: $TENANT_ID" \
-	-H "Content-type: application/json" \
-	-X PUT \
-  -s
-	-d "{\"sslTermination\":{\"certificate\":\"$CERT\",\"enabled\":true,\"secureTrafficOnly\":true,\"privatekey\":\"$PK\",\"intermediateCertificate\":\"$INTERMEDIATE\",\"securePort\":443}}" \ > /dev/null
+        -H "Content-type: application/json" \
+        -X PUT \
+        -s \
+        -d "{\"sslTermination\":{\"certificate\":\"$CERT\",\"enabled\":true,\"secureTrafficOnly\":true,\"privatekey\":\"$PK\",\"intermediateCertificate\":\"$INTERMEDIATE\",\"securePort\":443}}" \ > /dev/null
