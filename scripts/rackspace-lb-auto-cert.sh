@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#############################################
+## MODIFY THESE VARIABLES WITH LIVE VALUES ##
+#############################################
+
 ## Update this with API key from Rackspace
 API_KEY=''
 
@@ -20,6 +24,13 @@ INTERMEDIATE=''
 
 ## Path to the private key to be install on the load balancer
 PK=''
+
+#########################
+## DO NOT MODIFY BELOW ##
+#########################
+
+
+
 
 AUTH=$(curl -s https://identity.api.rackspacecloud.com/v2.0/tokens  \
     -X POST \
